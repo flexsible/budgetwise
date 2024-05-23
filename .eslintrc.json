@@ -28,6 +28,7 @@
       "react/jsx-props-no-spreading": "off",
       "eslint-plugin-import/no-cycle": "off",
       "import/no-cycle": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "import/no-extraneous-dependencies": "off"
   }
 }
