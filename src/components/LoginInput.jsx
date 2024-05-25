@@ -3,11 +3,11 @@ import React from 'react'
 export default function LoginInput () {
   return (
     <>
-    <div className='flex flex-col h-full justify-center items-center'>
-      <div className="flex flex-row gap-3 pb-4">
-          <h1 className="text-3xl font-bold text-[#4B5563] m-auto">Welcome Back !</h1>
-      </div>
-      <div className="flex flex-col w-full md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-8 md:p-10 2xl:p-12 3xl:p-14 bg-[#ffffff] rounded-2xl shadow-xl">
+    <div className='flex flex-col justify-center items-center h-screen'>
+      <div className="flex flex-col w-80 md:w-1/2 xl:w-2/5 2xl:w-2/5 3xl:w-1/3 mx-auto p-4 md:p-8 2xl:p-10 3xl:p-12 bg-[#ffffff] rounded-2xl shadow-xl">
+        <div className="flex flex-row gap-3 mb-4">
+            <h1 className="text-3xl font-bold text-[#4B5563] m-auto">Welcome Back !</h1>
+        </div>
         <form className="flex flex-col">
             <div className="pb-2">
                 <label className="block mb-2 text-sm font-medium text-[#515F96]">Email</label>

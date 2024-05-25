@@ -1,9 +1,12 @@
 import React from 'react'
-import Navigation from './components/Navigation'
+// import LoginInput from './components/LoginInput'
+// import RegisterInput from './components/RegisterInput'
+// import Card from './components/Card'
+import Profile from './components/Profile'
 function App () {
   return (
     <>
-      <Navigation/>
+      <Profile/>
     </>
   )
 }
