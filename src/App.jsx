@@ -1,9 +1,11 @@
-function App() {
+import React from 'react'
+import Card from './components/Card'
+function App () {
   return (
-    <div>
-      tes push
-    </div>
-  );
+    <>
+    <Card/>
+    </>
+  )
 }
 
-export default App;
+export default App
