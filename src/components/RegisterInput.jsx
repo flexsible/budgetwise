@@ -21,7 +21,7 @@ export default function RegisterInput () {
       setEmail('')
       setPassword('')
 
-      navigate('/')
+      navigate('/login')
     }
   }
   return (
