@@ -8,10 +8,11 @@ export default {
     extend: {
       backgroundImage: {
         coins: 'url(/Coins.png)',
-        shape: 'url(/Shape.png)'
+        shape: 'url(/Shape.png)',
+        line: 'url(/Line.png)'
       },
       colors: {
-        biru: '#0D3B66',
+        biru: '#515F96',
         krem: '#FAF0CA'
       },
       borderColor: {
