@@ -3,7 +3,7 @@ import { supabase } from '../utils/supabaseConfig'
 import { useNavigate, Link } from 'react-router-dom'
 
 export default function RegisterInput () {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
@@ -32,8 +32,8 @@ export default function RegisterInput () {
             <h1 className="text-3xl font-bold text-[#ffff] m-auto">Welcome !</h1>
         </div>
         <form
-         className="flex flex-col"
-         onSubmit={handleSubmit}
+          className="flex flex-col"
+          onSubmit={handleSubmit}
         >
             <div className="pb-2">
                 <label className="block mb-2 text-sm font-medium text-[#ffff]">Email</label>

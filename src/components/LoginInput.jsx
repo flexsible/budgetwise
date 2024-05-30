@@ -8,7 +8,7 @@ export default function LoginInput () {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
 
-  const handleSumbit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const { error } = await supabase.auth.signInWithPassword({
       email,
@@ -32,7 +32,7 @@ export default function LoginInput () {
         <div className="flex flex-row gap-3 mb-4">
             <h1 className="text-3xl font-bold text-[#4B5563] m-auto">Welcome Back !</h1>
         </div>
-        <form className="flex flex-col" onSubmit={handleSumbit}>
+        <form className="flex flex-col" onSubmit={handleSubmit}>
             <div className="pb-2">
                 <label className="block mb-2 text-sm font-medium text-[#515F96]">Email</label>
                 <div className="relative text-gray-400">
