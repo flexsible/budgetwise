@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Navigation () {
   return (
     <>
-      <nav className="bg-transparent border-gray-200 ">
+      <nav className="bg-transparent border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to='/' className="flex items-center space-x-3 rtl:space-x-reverse">
               <img src="https://placehold.co/100x40" className="h-8 rounded-lg" alt="BudgetWise Logo" />

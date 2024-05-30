@@ -1,9 +1,10 @@
 import React from 'react'
+import LandingPage from '../components/LandingPage'
 
 const HomePage = () => {
   return (
     <>
-      <h1>home</h1>
+      <LandingPage/>
     </>
   )
 }
