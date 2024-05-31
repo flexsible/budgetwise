@@ -10,7 +10,8 @@ export default {
         coins: 'url(/Coins.png)',
         shape: 'url(/Shape.png)',
         line: 'url(/Line.png)',
-        star: 'url(Star.png)'
+        star: 'url(Star.png)',
+        aboutUs: 'url(/bg-aboutUs.png)'
       },
       colors: {
         biru: '#515F96',
