@@ -10,4 +10,3 @@ const RegisterPage = () => {
 }
 
 export default RegisterPage
-RegisterPage
