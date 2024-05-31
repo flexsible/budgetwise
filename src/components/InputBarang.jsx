@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
 
-export default function InputBarang({ number }) {
-  const [value, setValue] = useState('');
+export default function InputBarang ({ number }) {
+  const [value, setValue] = useState('')
   const options = [
     { label: 'Tidak Penting' },
     { label: 'Penting' },
     { label: 'Sangat Penting' }
-  ];
+  ]
 
-  function handleSelect(event) {
-    setValue(event.target.value);
+  function handleSelect (event) {
+    setValue(event.target.value)
   }
 
   return (
@@ -33,5 +35,5 @@ export default function InputBarang({ number }) {
         </select>
       </div>
     </div>
-  );
+  )
 }
