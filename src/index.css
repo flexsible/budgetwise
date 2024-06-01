@@ -5,3 +5,15 @@
 body {
   background-color: #515F96;
 }
+
+.bg-HIW {
+  background-image: url('/ornamen-HIW-atas.png'), url('/coin-HIW-bawah.png');
+  background-position: right top, left bottom;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.bg-TIM {
+  background-image: url('/ornamen-tim-bawah.png'), url('/coin-TIM-atas.png');
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, no-repeat;
+}
