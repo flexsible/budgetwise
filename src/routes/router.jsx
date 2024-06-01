@@ -7,6 +7,7 @@ import ErrorPage from '../pages/ErrorPage'
 import BudgetPage from '../pages/BudgetPage'
 import SuggestPage from '../pages/SuggestPage'
 import ResultPage from '../pages/ResultPage'
+import HistoryPage from '../pages/HistoryPage'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: '/budgets/:id/result',
     element: <ResultPage />
+  },
+  {
+    path: '/history',
+    element: <HistoryPage />
   }
 ])
 

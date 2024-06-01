@@ -11,11 +11,15 @@ export default {
         shape: 'url(/Shape.png)',
         line: 'url(/Line.png)',
         star: 'url(Star.png)',
-        aboutUs: 'url(/bg-aboutUs.png)'
+        ornamenAU: 'url(/ornamen-AU-bawah.png)',
+        ornamenHIW: 'url(/ornamen-HIW-atas.png)',
+        coinHIWbawah: 'url(/coin-HIW-bawah.png)',
+        coinTIMatas: 'url(/coin-TIM-atas.png)'
       },
       colors: {
         biru: '#515F96',
-        krem: '#FAF0CA'
+        krem: '#FAF0CA',
+        mustard: '#F4D35E'
       },
       borderColor: {
         borderBlue: '#0D3B66'
