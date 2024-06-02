@@ -16,13 +16,14 @@ export default function RegisterInput () {
     })
 
     setError(error)
-
     if (!error) {
       setEmail('')
       setPassword('')
+      alert('Register success! confirm your email to activate your account!')
 
       navigate('/login')
     }
+    alert(error.message)
   }
   return (
     <>

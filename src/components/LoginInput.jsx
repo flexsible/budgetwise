@@ -14,15 +14,14 @@ export default function LoginInput () {
       email,
       password
     })
-
     setError(error)
-
     if (!error) {
       setEmail('')
       setPassword('')
 
       navigate('/', { replace: true })
     }
+    alert(error.message)
   }
 
   return (
