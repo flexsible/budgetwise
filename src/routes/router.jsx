@@ -31,8 +31,12 @@ const router = createBrowserRouter([
     path: '/budgets/:id/suggest',
     element: <SuggestPage />
   },
+  // {
+  //   path: '/budgets/:id/result',
+  //   element: <ResultPage />
+  // },
   {
-    path: '/budgets/:id/result',
+    path: '/result',
     element: <ResultPage />
   },
   {

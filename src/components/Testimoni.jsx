@@ -4,7 +4,7 @@ import { Carousel } from 'flowbite-react'
 export default function Testimoni () {
   return (
     <>
-    <div className='h-screen w-full justify-center flex items-center bg-krem'>
+    <div className='h-screen w-full justify-center flex items-center bg-krem bg-oranmenTESTI bg-no-repeat bg-right-top'>
       <div className="h-1/2 w-3/4 flex flex-row gap-12">
         <Carousel className='shadow-lg rounded-lg'>
           <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl px-24'>

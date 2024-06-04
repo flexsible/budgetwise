@@ -17,3 +17,15 @@ body {
   background-position: right bottom, left top;
   background-repeat: no-repeat, no-repeat;
 }
+
+.bg-RP {
+  background-image: url('/coin-result-bawah.png'), url('/ornamen-result-pojok.png');
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.bg-IB {
+  background-image: url('/coin-IB-atas'), url('/ornamen-IB-atas.png'), url('/ornamen-IB-bawah.png') ;
+  background-position: right top, left top, right bottom;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+}
