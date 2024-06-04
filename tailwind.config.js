@@ -16,12 +16,15 @@ export default {
         ornamenAU: 'url(/ornamen-AU-bawah.png)',
         ornamenHIW: 'url(/ornamen-HIW-atas.png)',
         coinHIWbawah: 'url(/coin-HIW-bawah.png)',
-        coinTIMatas: 'url(/coin-TIM-atas.png)'
+        coinTIMatas: 'url(/coin-TIM-atas.png)',
+        oranmenTESTI: 'url(/ornamen-testi-atas.png)'
       },
       colors: {
         biru: '#515F96',
         krem: '#FAF0CA',
-        mustard: '#F4D35E'
+        mustard: '#F4D35E',
+        pepaya: '#EE964B',
+        merah: '#EF4444'
       },
       borderColor: {
         borderBlue: '#0D3B66'
