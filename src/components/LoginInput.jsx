@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { supabase } from '../utils/supabaseConfig'
 import { useNavigate, Link } from 'react-router-dom'
+import { useAtom } from 'jotai'
+import { sessionStore } from '../stores/stores'
 
 export default function LoginInput () {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
+  const [session, setSession] = useAtom(sessionStore)
+
+  useEffect(() => {
+    if (session) {
+      navigate('/')
+    }
+  }, [session])
 
   const handleSubmit = async (e) => {
     e.preventDefault()

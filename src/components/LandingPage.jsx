@@ -1,7 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { useAtom } from 'jotai'
+import { sessionStore } from '../stores/stores'
 // import Navigation from './Navigation'
 
 export default function LandingPage () {
+  const [session, setSession] = useAtom(sessionStore)
   return (
     <>
     {/* <Navigation/> */}
@@ -12,7 +16,7 @@ export default function LandingPage () {
             <span className='text-[#F4D35E]'>NAVIGATE YOUR </span>FINANCE <br /> WITH <span className='text-[#F4D35E]'>CONFIDENCE</span>
           </h1>
           <h2 className='text-[#F4D35E] text-2xl drop-shadow-lg font-semibold md:text-xl'>Your Path to Financial Success</h2>
-          <button className="my-6 block font-bold text-white rounded-lg px-6 py-4 text-xl bg-[#EE946B] md:px-5 md:py-3 md:text-lg">Get Started</button>
+          <Link to={'/budgets'} className="my-6 block font-bold text-white rounded-lg px-6 py-4 text-xl bg-[#EE946B] md:px-5 md:py-3 md:text-lg">Get Started</Link>
         </div>
         <div className='flex items-center me-4'>
           <img src="/Home_logo.png" alt="" />
