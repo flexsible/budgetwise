@@ -13,8 +13,8 @@ function BudgetPage () {
 
   useEffect(() => {
     if (!session) {
-      alert('Please login to access the features!')
       navigate('/login')
+      alert('Please login to access the features!')
     }
   }, [session])
 
