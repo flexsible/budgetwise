@@ -29,3 +29,9 @@ body {
   background-position: right top, left top, right bottom;
   background-repeat: no-repeat, no-repeat, no-repeat;
 }
+
+.bg-WP {
+  background-image: url('/coin-wp-bawah.png'), url('/ornamen-wp-bawah.png') ;
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat, no-repeat;
+}
