@@ -2,60 +2,36 @@ import React, { useState, useEffect } from 'react'
 import InputBarang from '../components/InputBarang'
 import TombolGenerate from '../components/TombolGenerate'
 import InputBudget from '../components/InputBudget'
-import { useAtom, atom } from 'jotai'
+import { useAtom } from 'jotai'
 import { sessionStore } from '../stores/stores'
-import { Link, useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import RectangleInput from '../components/RectangleInput'
+import RectangleInput2 from '../components/RectangleInput2'
 
-function BudgetPage () {
+function BudgetPage() {
   const navigate = useNavigate()
-  const [inputs, setInputs] = useState([{}])
-  const [session, setSession] = useAtom(sessionStore)
+  const [session] = useAtom(sessionStore)
 
   useEffect(() => {
     if (!session) {
       navigate('/login')
       alert('Please login to access the features!')
     }
-  }, [session])
-
-  const handleAddInput = () => {
-    setInputs([...inputs, {}])
-  }
-
-  const handleRemoveInput = (index) => {
-    if (inputs.length > 1) {
-      const newInputs = inputs.slice()
-      newInputs.splice(index, 1)
-      setInputs(newInputs)
-    }
-  }
+  }, [session, navigate])
 
   return (
     <>
-        <div className="bg-krem min-h-screen flex flex-col items-center bg-IB">
+      <div className="bg-krem min-h-screen flex flex-col items-center bg-IB">
         <h1 className="pt-20 pb-10 text-6xl font-bold text-biru drop-shadow-lg my-1 text-center">
           Jumlah Budget Anda
         </h1>
         <InputBudget />
-        {inputs.map((_, index) => (
-          <div key={index} className="flex items-center space-x-2">
-            <InputBarang number={index + 1} />
-            <button
-              onClick={() => handleRemoveInput(index)}
-              className="text-white font-bold text-xl bg-red-500 px-4 py-2 outline outline-offset-2 outline-merah"
-            >
-              -
-            </button>
-          </div>
-        ))}
-        <div className="flex items-center space-x-2 mt-4 gap-6">
-        <TombolGenerate />
-          <button
-            onClick={handleAddInput}
-            className="px-4 py-2 bg-biru text-white rounded outline outline-offset-2 outline-biru"
-          >
-            +
-          </button>
+        <div className="flex items-center space-x-2">
+          <TombolGenerate />
+        </div>
+        <div className="flex justify-center space-x-4">
+          <RectangleInput />
+          <RectangleInput2 />
         </div>
       </div>
     </>

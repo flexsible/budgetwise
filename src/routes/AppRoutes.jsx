@@ -21,7 +21,6 @@ function AppRoutes () {
           <Route path=':id' element={<SuggestPage/>}/>
         </Route>
       </Route>
-
       <Route path='*' element={<ErrorPage />}/>
     </Routes>
   )
