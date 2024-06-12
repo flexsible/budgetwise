@@ -17,7 +17,8 @@ export default {
         ornamenHIW: 'url(/ornamen-HIW-atas.png)',
         coinHIWbawah: 'url(/coin-HIW-bawah.png)',
         coinTIMatas: 'url(/coin-TIM-atas.png)',
-        oranmenTESTI: 'url(/ornamen-testi-atas.png)'
+        oranmenTESTI: 'url(/ornamen-testi-atas.png)',
+        gambar1BudgetInput: 'url(/gambar_rectangle_input.png)'
       },
       colors: {
         biru: '#515F96',
