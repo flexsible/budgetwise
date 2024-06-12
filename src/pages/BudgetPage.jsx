@@ -26,9 +26,6 @@ function BudgetPage() {
           Jumlah Budget Anda
         </h1>
         <InputBudget />
-        <div className="flex items-center space-x-2">
-          <TombolGenerate />
-        </div>
         <div className="flex justify-center space-x-4">
           <RectangleInput />
           <RectangleInput2 />
