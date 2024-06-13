@@ -14,14 +14,16 @@ import WordPage from '../pages/WordPage'
 function AppRoutes () {
   return (
     <Routes>
-      <Route element={<RootLayout/>}>
-        <Route path='/' element={<HomePage/>}/>
+      <Route path='auth'>
         <Route path='login' element={<LoginPage />}/>
         <Route path='register' element={<RegisterPage />}/>
+      </Route>
+
+      <Route element={<RootLayout/>}>
+        <Route path='/' element={<HomePage/>}/>
         <Route path='budgets' element={<BudgetPage />}>
-          <Route path=':id' element={<SuggestPage/>}/>
         </Route>
-        <Route path='word' element={<WordPage/>}/>
+        <Route path='result' element={<ResultPage/>}/>
       </Route>
       <Route path='*' element={<ErrorPage />}/>
     </Routes>

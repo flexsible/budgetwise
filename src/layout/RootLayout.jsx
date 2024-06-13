@@ -8,7 +8,7 @@ import HomePage from '../pages/HomePage'
 import { supabase } from '../utils/supabaseConfig'
 
 function RootLayout () {
-  const [session, setSession] = useAtom(sessionStore)
+  const [session] = useAtom(sessionStore)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -56,7 +56,7 @@ function RootLayout () {
                       </div>
                       )
                     : (
-                      <Link to="/login" className="mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">Login</Link>
+                      <Link to="/auth/login" className="mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">Login</Link>
                       )}
                 </li>
               </ul>

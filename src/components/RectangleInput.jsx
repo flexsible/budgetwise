@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const RectangleInput = () => {
+const RectangleInput = ({ onClick }) => {
   return (
-    <div className="relative flex items-center justify-center p-5">
+    <Link className="relative flex items-center justify-center p-5" to={'/:id'} onClick={onClick}>
       <div className="bg-white w-[280px] h-[305px] rounded-2xl flex items-center justify-center relative">
         <div className="absolute top-3 w-[260px] h-[200px] rounded-2xl flex items-center justify-center" style={{ backgroundColor: '#F4D35E' }}>
           <div className="flex flex-col items-center justify-center">
@@ -34,7 +35,7 @@ const RectangleInput = () => {
         >
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

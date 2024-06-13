@@ -66,7 +66,7 @@ export default function LoginPage () {
             <div className="text-sm font-light text-[#6B7280] ">
               Don&apos;t have an account yet?
               <Link className='font-medium text-[#515F96] hover:underline'
-              to={'/register'}>
+              to={'/auth/register'}>
                 Register
               </Link>
             </div>

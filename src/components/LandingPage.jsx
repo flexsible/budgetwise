@@ -1,11 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAtom } from 'jotai'
 import { sessionStore } from '../stores/stores'
 // import Navigation from './Navigation'
 
 export default function LandingPage () {
+  const navigate = useNavigate()
   const [session, setSession] = useAtom(sessionStore)
+
+  useEffect(() => {
+  }, [session])
   return (
     <>
     {/* <Navigation/> */}

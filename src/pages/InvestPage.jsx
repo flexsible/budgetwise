@@ -4,6 +4,7 @@ import Investment from '../components/Investment'
 
 export default function InvestPage () {
   const result = Array.from({ length: 5 })
+
   return (
     <>
       <div className="bg-krem h-screen">

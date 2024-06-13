@@ -61,7 +61,7 @@ export default function RegisterInput () {
             <div className="text-sm font-light text-[#FFF] ">
               Already have an account?
               <Link className='font-medium text-[#FFF] hover:underline'
-              to={'/login'}>
+              to={'/auth/login'}>
                 Login
               </Link>
             </div>

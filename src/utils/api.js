@@ -13,7 +13,7 @@ export const HistoryData = async () => {
 }
 
 export const image = {
-  avatar: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/nyoman-img.png',
+  avatar: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/Nyoman.png',
   avatar2: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/FB_IMG_1713200915872.jpg',
   avatar3: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/profile.jpeg',
   coins: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/Coins.png',
