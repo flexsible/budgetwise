@@ -2,8 +2,14 @@ import React, { useEffect, useState } from 'react'
 import InputBudget from '../components/InputBudget'
 import ResultItems from '../components/ResultItems'
 import { supabase } from '../utils/supabaseConfig'
+import OutputBudget from '../components/OutputBudget'
+import { useAtom } from 'jotai'
+import { budgetStore } from '../stores/stores'
+
 
 export default function ResultPage () {
+  const [budget] = useAtom(budgetStore) // Mengambil nilai budget
+
   const [data, setData] = useState('')
   const [error, setError] = useState('')
   console.log('data', data)
@@ -30,7 +36,7 @@ export default function ResultPage () {
         <h1 className="pt-20 pb-10 text-6xl font-bold text-biru drop-shadow-lg my-1 text-center">
           Saran Penggunaan Budget
         </h1>
-        <InputBudget />
+        <OutputBudget budget={budget} />
         <div className="py-6 flex flex-col gap-6 justify-center bg-krem items-center">
         <div className="flex items-center me-4 w-1/2 gap-4">
           <div className='bg-biru rounded-full me-2 px-4 text-center outline outline-offset-2 outline-biru'>
