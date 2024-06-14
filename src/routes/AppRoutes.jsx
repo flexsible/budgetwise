@@ -22,8 +22,8 @@ function AppRoutes () {
       <Route element={<RootLayout/>}>
         <Route path='/' element={<HomePage/>}/>
         <Route path='budgets' element={<BudgetPage />}>
+          <Route path=':id' element={<ResultPage/>}/>
         </Route>
-        <Route path='result' element={<ResultPage/>}/>
       </Route>
       <Route path='*' element={<ErrorPage />}/>
     </Routes>

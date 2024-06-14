@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useAtom } from 'jotai'
+import { v4 as uuidv4 } from 'uuid'
 import { sessionStore, userBudget, userDarurat, userInvest, userKebutuhan, userTarget } from '../stores/stores'
 import { useNavigate } from 'react-router-dom'
 import RectangleInput from '../components/RectangleInput'
 import RectangleInput2 from '../components/RectangleInput2'
 
-function BudgetPage ({ id }) {
+function BudgetPage () {
   const navigate = useNavigate()
   const [session, setSession] = useAtom(sessionStore)
   const [budget, setBudget] = useState(0)
+  const id = uuidv4()
   console.log(session)
 
   const onCardClick = (e) => {
@@ -17,22 +19,22 @@ function BudgetPage ({ id }) {
     navigate(`/budgets/${id}`)
   }
 
-  useEffect(() => {
-    const storedToken = localStorage.getItem('accessToken')
-    if (!storedToken) {
-      navigate('/login')
-      alert('Please login to access the features!')
-    } else {
-      setSession(storedToken)
-    }
-  }, [session, navigate, setSession])
-
   // useEffect(() => {
-  //   if (!session) {
-  //     navigate('/auth/login')
+  //   const storedToken = localStorage.getItem('accessToken')
+  //   if (!storedToken) {
+  //     navigate('/login')
   //     alert('Please login to access the features!')
+  //   } else {
+  //     setSession(storedToken)
   //   }
-  // }, [session])
+  // }, [session, navigate, setSession])
+
+  useEffect(() => {
+    if (!session) {
+      navigate('/auth/login')
+      alert('Please login to access the features!')
+    }
+  }, [session])
 
   return (
     <>
