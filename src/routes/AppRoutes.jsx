@@ -21,9 +21,9 @@ function AppRoutes () {
 
       <Route element={<RootLayout/>}>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='budgets' element={<BudgetPage />}>
-          <Route path=':id' element={<ResultPage/>}/>
-        </Route>
+        <Route path='word' element={<WordPage />}/>
+        <Route path='budgets' element={<BudgetPage />}/>
+        <Route path='/budgets/:id' element={<ResultPage />}/>
       </Route>
       <Route path='*' element={<ErrorPage />}/>
     </Routes>

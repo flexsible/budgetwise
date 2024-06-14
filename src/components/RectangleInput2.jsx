@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useAtom } from 'jotai'
+import { userType } from '../stores/stores'
+import { Link } from 'react-router-dom'
 
-const RectangleInput2 = () => {
+const RectangleInput2 = ({onClick}) => {
+  // const [type, setType] = useAtom(userType)
+  // console.log('type2', type)
+  // useEffect(() => {
+  //   setType('konservatif')
+  // })
   return (
-    <div className="relative flex items-center justify-center p-5">
+    <Link className="relative flex items-center justify-center p-5" to={'/:id'} onClick={onClick}>
       <div className="bg-white w-[280px] h-[305px] rounded-2xl flex items-center justify-center relative">
         <div className="absolute top-3 w-[260px] h-[200px] rounded-2xl flex items-center justify-center" style={{ backgroundColor: '#F4D35E' }}>
           <div className="flex flex-col items-center justify-center">
@@ -34,7 +42,7 @@ const RectangleInput2 = () => {
         >
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 

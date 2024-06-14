@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useAtom } from 'jotai'
+import { userType } from '../stores/stores'
 
-const RectangleInput = ({ onClick }) => {
+const RectangleInput = ({onClick}) => {
+  // const [type, setType] = useAtom(userType)
+  // console.log('type', type)
+  // // useEffect(() => {
+  // //   setType('agresif')
+  // // })
   return (
     <Link className="relative flex items-center justify-center p-5" to={'/:id'} onClick={onClick}>
       <div className="bg-white w-[280px] h-[305px] rounded-2xl flex items-center justify-center relative">
