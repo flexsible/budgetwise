@@ -1,26 +1,40 @@
 import React, { useState, useEffect } from 'react'
 import { useAtom } from 'jotai'
-import { sessionStore, userBudget, userDarurat, userInvest, userKebutuhan, userTarget } from '../stores/stores'
-import { useNavigate } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
+import { sessionStore, userBudget, userType, currentId } from '../stores/stores'
+import { Link, useNavigate } from 'react-router-dom'
 import RectangleInput from '../components/RectangleInput'
 import RectangleInput2 from '../components/RectangleInput2'
+import ResultPage from './ResultPage'
+import WordStart from '../components/WordStart'
 
-function BudgetPage ({ id }) {
+function BudgetPage () {
   const navigate = useNavigate()
   const [session, setSession] = useAtom(sessionStore)
-  const [budget, setBudget] = useState(0)
+  const [budget, setBudget] = useAtom(userBudget)
+  const [type, setType] = useAtom(userType)
+  const [_id, setId] = useAtom(currentId)
+  const id = uuidv4()
   console.log(session)
 
-  const onCardClick = (e) => {
+  const onRectangleClick = (e) => {
     e.preventDefault()
-    setBudget(e.target.value)
     navigate(`/budgets/${id}`)
+    setType('agresif')
+    setId(id)
+  }
+
+  const onSecondRectangleClick = (e) => {
+    e.preventDefault()
+    navigate(`/budgets/${id}`)
+    setType('konservatif')
+    setId(id)
   }
 
   useEffect(() => {
     const storedToken = localStorage.getItem('accessToken')
     if (!storedToken) {
-      navigate('/login')
+      navigate('/auth/login')
       alert('Please login to access the features!')
     } else {
       setSession(storedToken)
@@ -42,15 +56,16 @@ function BudgetPage ({ id }) {
         </h1>
         <div className='flex items-center me-4 justify-center pb-3'>
           <input
-           className="px-3 py-3 text-lg font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue"
-           onChange={(e) => setBudget(e.target.value)}
-           value={budget} />
+            className="px-3 py-3 text-lg font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}/>
         </div>
-        <div className="flex justify-center space-x-4">
-          <RectangleInput onClick={onCardClick}/>
-          <RectangleInput2 onClick={onCardClick} />
+        <div className="flex justify-center gap-4 space-x-4 mt-8">
+          <RectangleInput2 onClick={onSecondRectangleClick} budget={budget} />
+          <RectangleInput onClick={onRectangleClick} budget={budget}/>
         </div>
       </div>
+      <WordStart/>
     </>
   )
 }

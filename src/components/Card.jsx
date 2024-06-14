@@ -9,9 +9,9 @@ export default function Card () {
             <figure className="flex justify-center items-center rounded-2xl">
                 <img src="https://placehold.co/400x400" alt="Card Preview" className="rounded-2xl "/>
             </figure>
-            <div className="flex flex-col p-1">
+            {/* <div className="flex flex-col p-1">
                 <div className="text-lg rounded-2xl border border-gray-400 text-[#374151] p-2 text-center font-bold">placeholder</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

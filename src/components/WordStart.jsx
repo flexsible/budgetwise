@@ -1,34 +1,60 @@
-import React from 'react';
-import TombolNext from '../components/TombolNext';
+// import React from 'react'
 
-const WordStart = () => {
+// const WordStart = (onClose) => {
+//   return (
+//     <div className="flex flex-col items-start justify-center bg-krem">
+//       <div className="flex mx-auto justify-center items-center">
+//         <div className="flex flex-col rounded-2xl w-fit bg-biru shadow-xl p-3 gap-6 mx-4">
+//           <p className="mb-2 text-white">
+//             <strong>Pilihan Konservatif</strong>: <br /> Profil ini merupakan sebutan bagi kamu yang menghindari risiko tinggi.
+//           </p>
+//           <p className="mb-2 text-white">
+//             <strong>Pilihan Agresif</strong>: <br /> Profil risiko ini cocok bagi kamu yang mengejar peningkatan nilai investasi dalam jangka panjang.
+//           </p>
+//         </div>
+//       </div>
+//       <button onClick={onClose}>close</button>
+//     </div>
+//   )
+// }
+
+// export default WordStart
+
+import { Button, Modal } from 'flowbite-react'
+import React, { useState, useEffect } from 'react'
+
+export default function WordStart () {
+  const [openModal, setOpenModal] = useState(true)
+
+  useEffect(() => {
+    // Tampilkan modal setelah 1 detik
+    const timer = setTimeout(() => {
+      setOpenModal(true)
+    }, 10000) // 1000 ms = 1 detik
+
+    // Bersihkan timer jika komponen dibongkar
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
-    <div className="flex items-start justify-center min-h-screen bg-krem">
-      <div className="relative w-[1005px] h-[595px] bg-[#FFFEFE] rounded-[30px]">
-        <div className="absolute top-0 w-[910px] h-[500px] bg-[#F4D35E] rounded-[30px] mt-0 ml-[47.5px] p-8 flex flex-col justify-center items-center text-center">
-          <h1 className="text-2xl font-bold mb-4">Selamat Datang di BudgetWise!</h1>
-          <p className="mb-2">
-            Kami senang menyambut Anda ke situs kami, di mana pengelolaan keuangan menjadi lebih sederhana dan sesuai dengan kebutuhan Anda. BudgetWise hadir untuk membantu Anda merencanakan masa depan dengan lebih baik melalui dua pilihan layanan keuangan yang disesuaikan dengan tujuan dan toleransi risiko Anda:
-          </p>
-          <p className="mb-2">
-            <strong>Pilihan Konservatif</strong>: Cocok untuk Anda yang mencari stabilitas dan keamanan. Layanan ini fokus pada alokasi dana yang tinggi untuk kebutuhan utama sehari-hari, dengan risiko rendah sehingga Anda dapat merasa tenang dalam mengelola keuangan Anda.
-          </p>
-          <p className="mb-2">
-            <strong>Pilihan Agresif</strong>: Dirancang bagi Anda yang siap mengambil risiko menengah hingga tinggi untuk potensi imbal hasil yang lebih besar. Pilihan ini tetap memprioritaskan kebutuhan utama sehari-hari Anda, namun dengan pendekatan yang lebih dinamis untuk mencapai pertumbuhan yang lebih cepat.
-          </p>
-          <p className="mb-2">
-            Di BudgetWise, kami memahami bahwa setiap orang memiliki kebutuhan dan tujuan keuangan yang unik. Oleh karena itu, kami berkomitmen untuk memberikan solusi yang tepat bagi Anda. Jelajahi lebih lanjut dan temukan bagaimana kami dapat membantu Anda mencapai keseimbangan keuangan yang optimal.
-          </p>
-          <p className="mb-2">
-            Selamat merencanakan masa depan keuangan Anda dengan BudgetWise!
-          </p>
-        </div>
-        <div className="absolute bottom-[0px] left-1/2 transform -translate-x-1/2">
-          <TombolNext />
-        </div>
-      </div>
-    </div>
-  );
+    <>
+      {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
+      <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal.Header>Terms of Service</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
+              companies around the world are updating their terms of service agreements to comply.
+            </p>
+            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+              The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant
+              to ensure a common set of data rights in the European Union. It requires organizations to notify users as
+              soon as possible of high-risk data breaches that could personally affect them.
+            </p>
+          </div>
+        </Modal.Body>
+      </Modal>
+    </>
+  )
 }
-
-export default WordStart;

@@ -46,7 +46,7 @@ function RootLayout () {
                   {session
                     ? (
                       <div className='flex'>
-                        <Link to="/budgets" className="mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">Fitur</Link>
+                        <Link to="/word" className="mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">Fitur</Link>
                         <button
                         className='mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]'
                         onClick={handleSubmit}
