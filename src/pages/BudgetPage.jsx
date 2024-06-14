@@ -17,6 +17,16 @@ function BudgetPage ({ id }) {
     navigate(`/budgets/${id}`)
   }
 
+  useEffect(() => {
+    const storedToken = localStorage.getItem('accessToken')
+    if (!storedToken) {
+      navigate('/login')
+      alert('Please login to access the features!')
+    } else {
+      setSession(storedToken)
+    }
+  }, [session, navigate, setSession])
+
   // useEffect(() => {
   //   if (!session) {
   //     navigate('/auth/login')
