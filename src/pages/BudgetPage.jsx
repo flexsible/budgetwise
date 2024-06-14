@@ -29,7 +29,7 @@ function BudgetPage ({ id }) {
 
   // useEffect(() => {
   //   if (!session) {
-  //     navigate('/auth/login')
+  //     navigate('/login')
   //     alert('Please login to access the features!')
   //   }
   // }, [session])
