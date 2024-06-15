@@ -43,7 +43,7 @@ export default function LandingPage () {
   return (
     <>
     {/* <Navigation/> */}
-      <div className="py-6 flex gap-6 justify-center bg-biru h-screen bg-line bg-no-repeat bg-bottom bg-contain">
+      <div className="py-6 flex gap-6 justify-center bg-biru h-screen bg-line bg-no-repeat bg-bottom bg-contain" id='hero'>
         <div className='flex flex-col place-content-center items-start me-4 md:px-8'>
           <h2 className='text-white text-2xl text-left drop-shadow-lg font-semibold md:text-xl'>Smart Choices, Brighter Futures</h2>
           <h1 className='text-6xl font-bold text-white drop-shadow-lg my-1 md:text-5xl'>
