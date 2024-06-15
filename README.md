@@ -67,8 +67,6 @@ Registrasi dan Login: Pengguna dapat mendaftar dan masuk ke aplikasi untuk menga
 Tentukan Profil Risiko: Pilih preferensi risiko Anda (konservatif atau agresif) untuk menerima rekomendasi alokasi dana yang sesuai.
 Atur Alokasi Dana: Gunakan aplikasi untuk mengatur dana Anda ke berbagai kategori seperti kebutuhan utama, investasi, dana darurat, dan pembelian barang impian.
 Pantau dan Sesuaikan: Lihat laporan keuangan dan sesuaikan alokasi dana Anda sesuai dengan perubahan tujuan atau situasi keuangan Anda.
-Kontribusi
-Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi pada BudgetWise, silakan ikuti langkah-langkah berikut:
 
 ## Fork repository ini.
 
