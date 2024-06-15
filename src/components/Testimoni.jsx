@@ -3,35 +3,26 @@ import { Carousel } from 'flowbite-react'
 
 export default function Testimoni () {
   return (
-    <>
-    <div className='h-screen w-full justify-center flex items-center bg-krem bg-oranmenTESTI bg-no-repeat bg-right-top' id='testi'>
-      <div className="h-1/2 w-3/4 flex flex-row gap-12">
-        <Carousel className='shadow-lg rounded-lg'>
-          <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl px-24'>
-            <img className='rounded-full' src="https://placehold.co/100x100"/>
-            <h1 className='text-center text-xl font-semibold my-4'>placeholder</h1>
-            <h1 className='text-center text-xl'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima ea iste magnam quaerat accusamus sunt asperiores aliquid, quo exercitationem veritatis beatae mollitia saepe odit magni, corporis excepturi, at quasi deserunt quas nemo voluptate recusandae. Dolorum numquam quae maiores molestias mollitia?</h1>
+    <div className='flex justify-center items-center w-full h-screen bg-krem bg-oranmenTESTI bg-no-repeat bg-right-top' id='testi'>
+      <div className="w-full max-w-4xl h-1/2 px-4 md:px-0 flex flex-col md:flex-row gap-12">
+        {/* Single Carousel for both sets of testimonials to ensure better control and simplicity */}
+        <Carousel className='w-full shadow-lg rounded-lg'>
+          <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl p-4 md:px-24'>
+            <img className='rounded-full w-24 h-24' src="https://i.pravatar.cc/300?img=3" alt="Testimonial from a user"/>
+            <h1 className='text-center text-xl font-semibold my-4'>John Doe</h1>
+            <p className='text-center text-base md:text-xl'>
+              "Sejak menggunakan BudgetWise, saya lebih mudah dalam mengatur keuangan pribadi. Platform ini sangat membantu saya dalam membuat keputusan belanja yang lebih bijak. Dengan saran yang diberikan, saya bisa mengidentifikasi prioritas pengeluaran saya dan mengurangi pemborosan yang tidak perlu. Sungguh luar biasa melihat bagaimana pengelolaan keuangan saya menjadi lebih efisien. Terima kasih, BudgetWise, karena telah membuka mata saya terhadap pentingnya pengelolaan dana yang efektif!"
+            </p>
           </div>
-          <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl px-24'>
-            <img className='rounded-full' src="https://placehold.co/100x100"/>
-            <h1 className='text-center text-xl font-semibold my-4'>placeholder2</h1>
-            <h1 className='text-center text-xl'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime suscipit quaerat distinctio nostrum magnam! Eos, animi delectus vero in, maiores, reprehenderit iusto suscipit quod illo praesentium dolore minima vel. Ut, odio? Laboriosam perspiciatis minima illo laudantium necessitatibus, iusto dolorum dolore.</h1>
-          </div>
-        </Carousel>
-        <Carousel className='shadow-lg rounded-lg'>
-          <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl px-24'>
-            <img className='rounded-full' src="https://placehold.co/100x100"/>
-            <h1 className='text-center text-xl font-semibold my-4'>placeholder</h1>
-            <h1 className='text-center text-xl'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim harum eos tenetur ea voluptatibus? Nesciunt ab non repudiandae facilis debitis repellat velit beatae sint, quae, odio eum! Tempore aliquam at doloribus cumque consequuntur eum, voluptatibus facere reiciendis animi perspiciatis! Perferendis.</h1>
-          </div>
-          <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl px-24'>
-            <img className='rounded-full' src="https://placehold.co/100x100"/>
-            <h1 className='text-center text-xl font-semibold my-4'>placeholder2</h1>
-            <h1 className='text-center text-xl'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime suscipit quaerat distinctio nostrum magnam! Eos, animi delectus vero in, maiores, reprehenderit iusto suscipit quod illo praesentium dolore minima vel. Ut, odio? Laboriosam perspiciatis minima illo laudantium necessitatibus, iusto dolorum dolore.</h1>
+          <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl p-4 md:px-24'>
+            <img className='rounded-full w-24 h-24' src="https://i.pravatar.cc/300?img=4" alt="Testimonial from another user"/>
+            <h1 className='text-center text-xl font-semibold my-4'>Jane Smith</h1>
+            <p className='text-center text-base md:text-xl'>
+              "BudgetWise benar-benar mengubah cara saya mengelola keuangan. Fitur-fitur yang disediakan sangat intuitif dan memberikan analisis yang mendalam tentang pengeluaran saya. Dengan bantuan alat-alat ini, saya telah berhasil menabung lebih banyak dan mengurangi hutang. Setiap saran yang diberikan sangat berharga dan sesuai dengan kondisi keuangan saya. Ini adalah alat yang harus dimiliki bagi siapa saja yang serius ingin memperbaiki kondisi finansial mereka."
+            </p>
           </div>
         </Carousel>
       </div>
     </div>
-    </>
   )
 }

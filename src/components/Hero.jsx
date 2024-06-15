@@ -1,24 +1,12 @@
-import React, { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAtom } from 'jotai'
 import { sessionStore } from '../stores/stores'
 import Swal from 'sweetalert2'
-// import Navigation from './Navigation'
 
 export default function LandingPage () {
   const navigate = useNavigate()
   const [session, setSession] = useAtom(sessionStore)
-  // const onClickHandler = () => {
-  //   if (session.user.role === 'authenticated') {
-  //     navigate('/budgets')
-  //   } else if (!session) {
-  //     Swal.fire({
-  //       icon: 'error',
-  //       title: 'Oops...',
-  //       text: 'Please login to access the features!'
-  //     })
-  //   }
-  // }
 
   const onClickHandler = () => {
     const storedToken = localStorage.getItem('sb-jakimybhtjdbdhptzkxw-auth-token')
@@ -29,33 +17,28 @@ export default function LandingPage () {
         confirmButtonText: 'OK',
         icon: 'error'
       }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           navigate('/auth/login')
         }
       })
-    }
-    if (storedToken) {
+    } else {
       navigate('/budgets')
     }
   }
 
   return (
-    <>
-    {/* <Navigation/> */}
-      <div className="py-6 flex gap-6 justify-center bg-biru h-screen bg-line bg-no-repeat bg-bottom bg-contain" id='hero'>
-        <div className='flex flex-col place-content-center items-start me-4 md:px-8'>
-          <h2 className='text-white text-2xl text-left drop-shadow-lg font-semibold md:text-xl'>Smart Choices, Brighter Futures</h2>
-          <h1 className='text-6xl font-bold text-white drop-shadow-lg my-1 md:text-5xl'>
-            <span className='text-[#F4D35E]'>NAVIGATE YOUR </span>FINANCE <br /> WITH <span className='text-[#F4D35E]'>CONFIDENCE</span>
-          </h1>
-          <h2 className='text-[#F4D35E] text-2xl drop-shadow-lg font-semibold md:text-xl'>Your Path to Financial Success</h2>
-          <button onClick={onClickHandler} className="my-6 block font-bold text-white rounded-lg px-6 py-4 text-xl bg-[#EE946B] md:px-5 md:py-3 md:text-lg">Get Started</button>
-        </div>
-        <div className='flex items-center me-4'>
-          <img src="/Home_logo.png" alt="" />
-        </div>
+    <div className="flex flex-col md:flex-row items-center justify-center bg-biru h-screen bg-line bg-no-repeat bg-bottom bg-contain" id='hero'>
+      <div className='flex flex-col items-center md:items-start px-6 md:px-8'>
+        <h2 className='text-white text-xl md:text-2xl lg:text-3xl text-center md:text-left drop-shadow-lg font-semibold'>Smart Choices, Brighter Futures</h2>
+        <h1 className='text-3xl md:text-5xl lg:text-6xl font-bold text-white text-center md:text-left drop-shadow-lg my-1'>
+          <span className='text-[#F4D35E]'>NAVIGATE YOUR </span>FINANCE<br />WITH <span className='text-[#F4D35E]'>CONFIDENCE</span>
+        </h1>
+        <h2 className='text-[#F4D35E] text-xl md:text-2xl lg:text-3xl drop-shadow-lg font-semibold text-center md:text-left'>Your Path to Financial Success</h2>
+        <button onClick={onClickHandler} className="mt-6 mb-4 md:my-6 text-white rounded-lg px-5 py-3 text-lg md:px-6 md:py-4 md:text-xl bg-[#EE946B] hover:bg-[#d68559] transition-colors">Get Started</button>
       </div>
-    </>
+      <div className='hidden md:flex items-center justify-center'>
+        <img src="/Home_logo.png" alt="Home Logo" className="w-1/2 md:w-auto" />
+      </div>
+    </div>
   )
 }

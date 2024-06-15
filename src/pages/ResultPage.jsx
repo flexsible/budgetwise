@@ -207,7 +207,7 @@ export default function ResultPage ({ id }) {
       </div>
       <div className="flex justify-center gap-5">
         <Link to={'/budgets'} className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#EE946B]">Back</Link>
-        <button className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#515F96]" onClick={onClickHandler}>See your result!</button>
+        <button className="my-6 block font-bold text-biru rounded-lg px-6 py-3 bg-mustard sm:bg-biru sm:text-white" onClick={onClickHandler}>See your result!</button>
       </div>
       </div>
     </>
