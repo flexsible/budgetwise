@@ -3,6 +3,7 @@ import { supabase } from '../utils/supabaseConfig'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAtom } from 'jotai'
 import { sessionStore } from '../stores/stores'
+import Swal from 'sweetalert2'
 
 export default function LoginPage () {
   const navigate = useNavigate()
@@ -27,10 +28,18 @@ export default function LoginPage () {
     if (!error) {
       setEmail('')
       setPassword('')
-
+      Swal.fire({
+        icon: 'success',
+        title: 'Login Success',
+        text: 'You have loged in!'
+      })
       navigate('/', { replace: true })
     }
-    alert(error.message)
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: error.message
+    })
   }
 
   return (

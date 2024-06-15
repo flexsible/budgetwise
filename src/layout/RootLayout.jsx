@@ -6,21 +6,34 @@ import BudgetPage from '../pages/BudgetPage'
 import LoginPage from '../pages/LoginPage'
 import HomePage from '../pages/HomePage'
 import { supabase } from '../utils/supabaseConfig'
+import Swal from 'sweetalert2'
+import { image } from '../utils/api'
 
 function RootLayout () {
   const [session] = useAtom(sessionStore)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const { error } = await supabase.auth.signOut()
+    Swal.fire({
+      title: 'Do you want to logout?',
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        const { error } = supabase.auth.signOut()
+        Swal.fire('Sucess! you have been logout!', '', 'success')
+      }
+    })
   }
   return (
     <>
       <nav className="bg-transparent border-gray-200">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link to='/' className="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="https://placehold.co/100x40" className="h-8 rounded-lg" alt="BudgetWise Logo" />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BudgetWise</span>
+                <img src={image.logo} className="h-10 rounded-lg" alt="BudgetWise Logo" />
+                <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">BudgetWise</span>
             </Link>
             <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
               <span className="sr-only">Open main menu</span>
@@ -46,12 +59,12 @@ function RootLayout () {
                   {session
                     ? (
                       <div className='flex'>
-                        <Link to="/word" className="mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">Fitur</Link>
+                        <Link to="/budgets" className="mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">App</Link>
                         <button
                         className='mx-6 block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]'
                         onClick={handleSubmit}
                         >
-                          Signout
+                          Logout
                         </button>
                       </div>
                       )

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import InputBudget from '../components/InputBudget'
-import ResultItems from '../components/ResultItems'
 import { userBudget, userDarurat, userInvest, userSaran, userType, userUtama, currentId } from '../stores/stores'
 import { supabase } from '../utils/supabaseConfig'
 import { useAtom } from 'jotai'
+import Swal from 'sweetalert2'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function ResultPage ({ id }) {
   const [data, setData] = useState('')
@@ -15,6 +15,13 @@ export default function ResultPage ({ id }) {
   const [saran, setSaran] = useAtom(userSaran)
   const [utama, setUtama] = useAtom(userUtama)
   const [_id, setId] = useAtom(currentId)
+  const navigate = useNavigate()
+
+  const clear = () => {
+    setBudget(0)
+    setType('')
+    setId('')
+  }
 
   console.log('id', _id)
   console.log('data', data)
@@ -75,11 +82,11 @@ export default function ResultPage ({ id }) {
       .insert([
         {
           id: _id,
-          type: type,
-          utama: utama,
-          invest: invest,
-          saran: saran,
-          darurat: darurat
+          type,
+          utama,
+          invest,
+          saran,
+          darurat
         }
       ])
       .select()
@@ -89,7 +96,24 @@ export default function ResultPage ({ id }) {
 
   const onClickHandler = () => {
     try {
-      insertData()
+      Swal.fire({
+        title: 'Do you want to save the changes?',
+        showDenyButton: false,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire('Saved!', '', 'success')
+          insertData()
+          setTimeout(() => {
+            navigate('/')
+          }, 3000)
+          clear()
+        } else if (result.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info')
+        }
+      })
     } catch (error) {
       alert(error.message)
     }
@@ -119,7 +143,7 @@ export default function ResultPage ({ id }) {
           Saran Penggunaan Budget
         </h1>
         <div className="flex justify-center">
-          <input className="px-3 py-3 text-lg font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue" value={budget} disabled/>
+          <input className="px-3 py-3 text-lg font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue" value={'Rp. ' + budget} disabled/>
         </div>
         <div className="py-6 flex flex-col gap-6 justify-center bg-krem items-center">
         <div className="flex items-center me-4 w-1/2 gap-4">
@@ -137,7 +161,7 @@ export default function ResultPage ({ id }) {
             <label className="block mb-2 text-3xl font-medium text-white">2</label>
           </div>
           <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Investasi</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp {invest}</h1>
+          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {invest}</h1>
         </div>
       </div>
 
@@ -157,11 +181,12 @@ export default function ResultPage ({ id }) {
             <label className="block mb-2 text-3xl font-medium text-white">4</label>
           </div>
           <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Dana Target Pembelian Kamu!</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp {saran}</h1>
+          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {saran}</h1>
         </div>
       </div>
-      <div className="flex justify-center">
-        <button className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#EE946B]" onClick={onClickHandler}>Insert</button>
+      <div className="flex justify-center gap-5">
+        <Link to={'/budgets'} className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#EE946B]">Back</Link>
+        <button className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#515F96]" onClick={onClickHandler}>Insert</button>
       </div>
       </div>
     </>

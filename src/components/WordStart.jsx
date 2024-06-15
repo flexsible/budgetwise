@@ -22,35 +22,34 @@
 
 import { Button, Modal } from 'flowbite-react'
 import React, { useState, useEffect } from 'react'
+import { buttonTrigger } from '../stores/stores'
+import { useAtom } from 'jotai'
 
-export default function WordStart () {
-  const [openModal, setOpenModal] = useState(true)
+export default function WordStart ({ onClick }) {
+  const [openModal, setOpenModal] = useAtom(buttonTrigger)
 
-  useEffect(() => {
-    // Tampilkan modal setelah 1 detik
-    const timer = setTimeout(() => {
-      setOpenModal(true)
-    }, 10000) // 1000 ms = 1 detik
+  // useEffect(() => {
+  //   // Tampilkan modal setelah 1 detik
+  //   const timer = setTimeout(() => {
+  //     setOpenModal(true)
+  //   }, 10000) // 1000 ms = 1 detik
 
-    // Bersihkan timer jika komponen dibongkar
-    return () => clearTimeout(timer)
-  }, [])
+  //   // Bersihkan timer jika komponen dibongkar
+  //   return () => clearTimeout(timer)
+  // }, [])
 
   return (
     <>
-      {/* <Button onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
+      {/* <Button className='position: absolute left-1/2 top-1/2 translate-x-1/2' onClick={() => setOpenModal(true)}>Toggle modal</Button> */}
       <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
-        <Modal.Header>Terms of Service</Modal.Header>
+        <Modal.Header>FAQ</Modal.Header>
         <Modal.Body>
           <div className="space-y-6">
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-              With less than a month to go before the European Union enacts new consumer privacy laws for its citizens,
-              companies around the world are updating their terms of service agreements to comply.
+            <strong>Pilihan Konservatif</strong>: <br /> Profil ini merupakan sebutan bagi kamu yang menghindari risiko tinggi.
             </p>
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-              The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant
-              to ensure a common set of data rights in the European Union. It requires organizations to notify users as
-              soon as possible of high-risk data breaches that could personally affect them.
+            <strong>Pilihan Agresif</strong>: <br /> Profil risiko ini cocok bagi kamu yang mengejar peningkatan nilai investasi dalam jangka panjang.
             </p>
           </div>
         </Modal.Body>
