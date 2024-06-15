@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { userBudget, userDarurat, userInvest, userSaran, userType, userUtama, currentId } from '../stores/stores'
+import { userBudget, userDarurat, userInvest, userSaran, userType, userUtama, currentId, userQuote } from '../stores/stores'
 import { supabase } from '../utils/supabaseConfig'
 import { useAtom } from 'jotai'
 import Swal from 'sweetalert2'
@@ -15,6 +15,7 @@ export default function ResultPage ({ id }) {
   const [saran, setSaran] = useAtom(userSaran)
   const [utama, setUtama] = useAtom(userUtama)
   const [_id, setId] = useAtom(currentId)
+  const [quote, setQuote] = useAtom(userQuote)
   const navigate = useNavigate()
 
   const clear = () => {
@@ -34,6 +35,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 25 / 100)
       setDarurat(budget * 10 / 100)
       setSaran(budget * 10 / 100)
+      setQuote(`"Orang ini punya gaya yang penuh semangat dan berani dalam ngatur keuangan. Dia selalu memastikan ${utama} dari gajinya cukup buat kebutuhan sehari-hari, tapi nggak ragu ngurangin buat peluang yang lebih besar. ${invest} dia pake buat investasi yang punya potensi tinggi, meskipun risikonya juga besar. Buat dia, masa depan cerah bisa dicapai dengan langkah-langkah berani. Meski begitu, dia tetap nyisihin ${darurat} buat dana darurat, biar tetap aman kalau ada kejadian tak terduga. ${saran} dia manfaatin buat mengejar barang-barang atau pengalaman yang bisa ningkatin hidupnya sekarang. Dengan strategi ini, dia yakin bisa meraih lebih cepat dari yang lain."`)
     }
 
     if (type === 'konservatif') {
@@ -41,6 +43,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 20 / 100)
       setDarurat(budget * 10 / 100)
       setSaran(budget * 10 / 100)
+      setQuote(`"Orang ini tipe yang santai dan sabar dalam ngatur keuangan. Dia pastikan ${utama} dari gajinya aman buat kebutuhan sehari-hari. Terus, ${invest} disimpen buat investasi biar masa depan lebih terjamin. Nggak lupa juga, ${darurat} buat dana darurat, jadi dia nggak pernah panik kalau ada kejadian tak terduga. Terakhir, ${saran} dia alokasiin buat barang impian yang pengen dibeli tahun depan. Pelan tapi pasti, dia jalanin semua dengan tenang."`)
     }
   }
 
@@ -50,6 +53,16 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 30 / 100)
       setDarurat(budget * 20 / 100)
       setSaran(budget * 15 / 100)
+      setQuote(`
+      "Orang yang berani dan dinamis dalam mengatur keuangan biasanya selalu mencari cara untuk mempercepat pertumbuhan asetnya. Dengan alokasi dana seperti ini:
+      \n
+      ${utama} buat kebutuhan utama, memastikan kebutuhan sehari-hari terpenuhi dengan efisien tanpa berlebihan.
+      \n
+      ${invest} buat investasi, fokus pada peluang dengan potensi keuntungan tinggi meski risikonya juga besar.
+      \n
+      ${darurat} buat dana darurat, agar tetap siap menghadapi kejadian tak terduga tanpa harus mengganggu strategi investasi utama.
+      \n
+      ${saran} buat barang impian atau pengalaman seru, biar setahun lagi bisa menikmati hasil jerih payah dan keberanian mengambil risiko."`)
     }
 
     if (type === 'konservatif') {
@@ -57,6 +70,11 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 25 / 100)
       setDarurat(budget * 10 / 100)
       setSaran(budget * 15 / 100)
+      setQuote(`"Orang yang penyabar dalam mengatur keuangan biasanya fokus memastikan hidupnya nyaman dan terjamin. Dengan alokasi dana seperti ini:
+        ${utama} buat kebutuhan utama, supaya semua kebutuhan sehari-hari terpenuhi tanpa harus khawatir.
+        ${invest} buat investasi, dengan tujuan jangka panjang dan konsisten menambah aset.
+        ${darurat} buat dana darurat, agar siap menghadapi kejutan tak terduga.
+        ${saran} buat barang impian, biar setahun lagi bisa punya sesuatu yang sudah lama diinginkan."`)
     }
   }
 
@@ -66,6 +84,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 35 / 100)
       setDarurat(budget * 25 / 100)
       setSaran(budget * 15 / 100)
+      setQuote(`"Siap untuk tantangan? Di BudgetWise, kita bisa kelola duit dengan berani dan penuh semangat. Bayangin aja, ${utama} buat kebutuhan sehari-hari yang nggak bisa ditunda, ${invest} buat investasi di peluang besar dengan potensi keuntungan yang menggoda, ${darurat} untuk dana darurat biar siap ngadepin kejadian tak terduga, dan ${saran} buat ngincer barang atau pengalaman keren yang kita pengenin dalam waktu dekat. Jadi, kita bisa ambil langkah maju dengan percaya diri dan semangat tinggi. Ayo, mulai kelola keuangan dengan cara yang dinamis di BudgetWise!"`)
     }
 
     if (type === 'konservatif') {
@@ -73,6 +92,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 30 / 100)
       setDarurat(budget * 25 / 100)
       setSaran(budget * 15 / 100)
+      setQuote(`"Tenang aja, sabar-sabar aja. Di BudgetWise, kita bisa atur duit dengan santai. Coba bayangin, ${utama} buat keperluan utama yang penting banget, ${invest} buat investasi buat masa depan, ${darurat} buat jaga-jaga kalo ada apa-apa, dan ${saran} buat beli barang yang kita pengenin dalam setahun. Jadi, kita bisa nikmatin hidup tanpa perlu khawatirin soal uang. Yuk, kita mulai atur duit bersama-sama di BudgetWise!"`)
     }
   }
 
@@ -98,9 +118,10 @@ export default function ResultPage ({ id }) {
     try {
       Swal.fire({
         title: 'Do you want to save the changes?',
+        text: quote,
         showDenyButton: false,
         showCancelButton: true,
-        confirmButtonText: 'Save',
+        confirmButtonText: 'Save'
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
@@ -186,7 +207,7 @@ export default function ResultPage ({ id }) {
       </div>
       <div className="flex justify-center gap-5">
         <Link to={'/budgets'} className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#EE946B]">Back</Link>
-        <button className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#515F96]" onClick={onClickHandler}>Insert</button>
+        <button className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#515F96]" onClick={onClickHandler}>See your result!</button>
       </div>
       </div>
     </>
