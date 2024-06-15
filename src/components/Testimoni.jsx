@@ -11,14 +11,14 @@ export default function Testimoni () {
             <img className='rounded-full w-24 h-24' src="https://i.pravatar.cc/300?img=3" alt="Testimonial from a user"/>
             <h1 className='text-center text-xl font-semibold my-4'>John Doe</h1>
             <p className='text-center text-base md:text-xl'>
-              "Sejak menggunakan BudgetWise, saya lebih mudah dalam mengatur keuangan pribadi. Platform ini sangat membantu saya dalam membuat keputusan belanja yang lebih bijak. Dengan saran yang diberikan, saya bisa mengidentifikasi prioritas pengeluaran saya dan mengurangi pemborosan yang tidak perlu. Sungguh luar biasa melihat bagaimana pengelolaan keuangan saya menjadi lebih efisien. Terima kasih, BudgetWise, karena telah membuka mata saya terhadap pentingnya pengelolaan dana yang efektif!"
+              "Sejak menggunakan BudgetWise, saya lebih mudah dalam mengatur keuangan pribadi. Platform ini membantu saya dalam membuat keputusan belanja yang lebih bijak. Dengan saran yang diberikan, saya bisa mengidentifikasi prioritas pengeluaran saya dan mengurangi pemborosan."
             </p>
           </div>
           <div className='flex flex-col items-center justify-center bg-[#EEEEEE] h-full rounded-xl p-4 md:px-24'>
             <img className='rounded-full w-24 h-24' src="https://i.pravatar.cc/300?img=4" alt="Testimonial from another user"/>
             <h1 className='text-center text-xl font-semibold my-4'>Jane Smith</h1>
             <p className='text-center text-base md:text-xl'>
-              "BudgetWise benar-benar mengubah cara saya mengelola keuangan. Fitur-fitur yang disediakan sangat intuitif dan memberikan analisis yang mendalam tentang pengeluaran saya. Dengan bantuan alat-alat ini, saya telah berhasil menabung lebih banyak dan mengurangi hutang. Setiap saran yang diberikan sangat berharga dan sesuai dengan kondisi keuangan saya. Ini adalah alat yang harus dimiliki bagi siapa saja yang serius ingin memperbaiki kondisi finansial mereka."
+              "BudgetWise benar-benar mengubah cara saya mengelola keuangan. Fitur-fitur yang disediakan sangat intuitif dan memberikan analisis yang mendalam tentang pengeluaran saya. Dengan bantuan alat-alat ini, saya telah berhasil menabung lebih banyak dan mengurangi hutang."
             </p>
           </div>
         </Carousel>

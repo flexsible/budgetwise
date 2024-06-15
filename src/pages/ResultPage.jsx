@@ -164,7 +164,7 @@ export default function ResultPage ({ id }) {
           Saran Penggunaan Budget
         </h1>
         <div className="flex justify-center">
-          <input className="px-3 py-3 text-lg font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue" value={'Rp. ' + budget} disabled/>
+          <input className="px-3 py-3 text-sm font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue" value={'Rp. ' + budget} disabled/>
         </div>
         <div className="py-6 flex flex-col gap-6 justify-center bg-krem items-center">
         <div className="flex items-center me-4 w-1/2 gap-4">
@@ -172,7 +172,7 @@ export default function ResultPage ({ id }) {
             <label className="block mb-2 text-3xl font-medium text-white">1</label>
           </div>
           <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Kebutuhan Utama</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {utama}</h1>
+          <h1 className='px-3 py-3 text-sm font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {utama}</h1>
         </div>
       </div>
 
@@ -182,7 +182,7 @@ export default function ResultPage ({ id }) {
             <label className="block mb-2 text-3xl font-medium text-white">2</label>
           </div>
           <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Investasi</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {invest}</h1>
+          <h1 className='px-3 py-3 text-sm font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {invest}</h1>
         </div>
       </div>
 
@@ -192,7 +192,7 @@ export default function ResultPage ({ id }) {
             <label className="block mb-2 text-3xl font-medium text-white">3</label>
           </div>
           <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Dana Darurat</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {darurat}</h1>
+          <h1 className='px-3 py-3 text-sm font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {darurat}</h1>
         </div>
       </div>
 
@@ -202,12 +202,12 @@ export default function ResultPage ({ id }) {
             <label className="block mb-2 text-3xl font-medium text-white">4</label>
           </div>
           <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Dana Target Pembelian Kamu!</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {saran}</h1>
+          <h1 className='px-3 py-3 text-sm font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {saran}</h1>
         </div>
       </div>
       <div className="flex justify-center gap-5">
         <Link to={'/budgets'} className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#EE946B]">Back</Link>
-        <button className="my-6 block font-bold text-biru rounded-lg px-6 py-3 bg-mustard sm:bg-biru sm:text-white" onClick={onClickHandler}>See your result!</button>
+        <button className="my-6 block font-bold text-biru rounded-lg px-6 py-3 bg-mustard sm:bg-biru sm:text-white text-sm md:text-base md:px-6 py-2 md:py-3" onClick={onClickHandler}>See your result!</button>
       </div>
       </div>
     </>
