@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useAtom } from 'jotai'
 import { userType } from '../stores/stores'
 import { Link } from 'react-router-dom'
+import { image } from '../utils/api'
 
 const RectangleInput2 = ({onClick}) => {
   // const [type, setType] = useAtom(userType)
@@ -15,7 +16,7 @@ const RectangleInput2 = ({onClick}) => {
         <div className="flex flex-col rounded-xl w-64 bg-[#F4D35E] p-3 gap-6">
           <div className="grid grid-cols-1 place-content-center aspect-square rounded-2xl">
             <img
-              src="../public/gambar_rectangle_input2.png"
+              src={image.rectangle2}
               alt="Example"
               className="mx-auto mb-2"
               style={{ marginTop: '4px' }} // Adjust the value as needed for the gap
