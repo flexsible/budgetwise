@@ -44,16 +44,16 @@ function RootLayout () {
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
               <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
                 <li>
-                  <Link to="/" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</Link>
+                  <a href="/#hero" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
                 </li>
                 <li>
-                  <Link to="/" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
+                  <a href="/#about" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
                 </li>
                 <li>
-                  <Link to="/" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">How</Link>
+                  <a href="/#how" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">How</a>
                 </li>
                 <li>
-                  <Link to="/" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Team</Link>
+                  <a href="/#team" className="mx-6 px-3 py-2 block font-bold text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#EE946B] md:p-0 dark:text-white md:dark:hover:text-[#EE946B] dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Team</a>
                 </li>
                 <li>
                   {session

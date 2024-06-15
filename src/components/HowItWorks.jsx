@@ -3,7 +3,7 @@ import React from 'react'
 function HowItWorks () {
   return (
     <>
-      <div className="flex flex-col items-center h-screen bg-krem bg-HIW">
+      <div className="flex flex-col items-center h-screen bg-krem bg-HIW" id='how'>
         <div>
           <img src="/2-howItWorks.png" alt="How it works" />
         </div>

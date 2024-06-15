@@ -2,7 +2,7 @@ import React from 'react'
 
 function AboutUs () {
   return (
-    <div className="py-6 flex gap-6 justify-center items-center bg-krem h-screen bg-ornamenAU bg-right-bottom bg-no-repeat">
+    <div className="py-6 flex gap-6 justify-center items-center bg-krem h-screen bg-ornamenAU bg-right-bottom bg-no-repeat" id='about'>
       <div className='flex w-1/2 justify-center items-center me-4'>
         <img src="/hiasan-aboutUs.png" alt="" className="max-w-full"/>
       </div>
