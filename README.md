@@ -1,8 +1,9 @@
 # BudgetWise - A Web-Based Financial Allocation Tool
 
-BudgetWise adalah aplikasi web yang dirancang untuk membantu pengguna mengelola alokasi dana mereka berdasarkan preferensi risiko masing-masing. Apakah Anda tipe konservatif yang lebih suka keamanan atau tipe agresif yang mencari peluang besar, BudgetWise siap membantu Anda membuat keputusan keuangan yang lebih baik.
+**BudgetWise** adalah aplikasi web yang dirancang untuk membantu pengguna mengelola alokasi dana mereka berdasarkan preferensi risiko masing-masing. Apakah Anda tipe konservatif yang lebih suka keamanan atau tipe agresif yang mencari peluang besar, BudgetWise siap membantu Anda membuat keputusan keuangan yang lebih baik.
 
-Fitur Utama
+## Fitur Utama
+
 Pengelolaan Keuangan yang Disesuaikan: Tentukan alokasi dana Anda dengan mudah berdasarkan profil risiko, baik konservatif maupun agresif.
 Antarmuka Pengguna Dinamis: Dibangun dengan React, BudgetWise menawarkan pengalaman pengguna yang responsif dan intuitif.
 Manajemen Keadaan dengan Jotai: Gunakan state management yang efisien dengan Jotai untuk memastikan performa aplikasi yang cepat dan lancar.
@@ -10,7 +11,7 @@ Backend yang Handal dengan Supabase: Data pengguna disimpan dan dikelola dengan 
 Instalasi
 Ikuti langkah-langkah berikut untuk menginstal dan menjalankan BudgetWise di lingkungan lokal Anda:
 
-Kloning Repository ini
+## Kloning Repository ini
 
 ```bash
 git clone https://github.com/username/BudgetWise.git
@@ -58,8 +59,10 @@ BudgetWise/
 ├── .env                    # Variabel environment (harus dibuat sendiri)
 ├── package.json            # Dependensi dan skrip untuk npm
 └── README.md               # Dokumentasi ini
+```
 
-Cara Penggunaan
+## Cara Penggunaan
+
 Registrasi dan Login: Pengguna dapat mendaftar dan masuk ke aplikasi untuk mengakses fitur pengelolaan keuangan.
 Tentukan Profil Risiko: Pilih preferensi risiko Anda (konservatif atau agresif) untuk menerima rekomendasi alokasi dana yang sesuai.
 Atur Alokasi Dana: Gunakan aplikasi untuk mengatur dana Anda ke berbagai kategori seperti kebutuhan utama, investasi, dana darurat, dan pembelian barang impian.
@@ -67,9 +70,9 @@ Pantau dan Sesuaikan: Lihat laporan keuangan dan sesuaikan alokasi dana Anda ses
 Kontribusi
 Kami menyambut kontribusi dari komunitas! Jika Anda ingin berkontribusi pada BudgetWise, silakan ikuti langkah-langkah berikut:
 
-Fork repository ini.
+## Fork repository ini.
+
 Buat branch baru (git checkout -b feature-branch).
 Lakukan perubahan dan commit (git commit -m 'Add new feature').
 Push ke branch (git push origin feature-branch).
 Buat pull request dan jelaskan perubahan Anda.
-```
