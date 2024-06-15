@@ -24,5 +24,6 @@ export const image = {
   shape2: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/Shape2.png',
   shape3: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/Shape3.png',
   shape4: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/Shape4.png',
-  star: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/Star.png'
+  star: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/Star.png',
+  logo: 'https://jakimybhtjdbdhptzkxw.supabase.co/storage/v1/object/public/Images/budgetwise-logo.png'
 }

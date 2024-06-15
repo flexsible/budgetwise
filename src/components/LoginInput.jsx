@@ -3,6 +3,7 @@ import { supabase } from '../utils/supabaseConfig'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAtom } from 'jotai'
 import { sessionStore } from '../stores/stores'
+import Swal from 'sweetalert2'
 
 export default function LoginInput () {
   const navigate = useNavigate()
@@ -27,10 +28,8 @@ export default function LoginInput () {
     if (!error) {
       setEmail('')
       setPassword('')
-
       navigate('/', { replace: true })
     }
-    alert(error.message)
   }
 
   return (
