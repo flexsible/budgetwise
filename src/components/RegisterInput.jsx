@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { supabase } from '../utils/supabaseConfig'
 import { useNavigate, Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 export default function RegisterInput () {
   const navigate = useNavigate()
@@ -15,26 +16,23 @@ export default function RegisterInput () {
       password
     })
 
-    const getEmailData = async () => {
-      const { data, error } = await supabase
-        .from('Users')
-        .select('*')
-      console.log('emailData', data)
-    }
-
-    useEffect(() => {
-      getEmailData()
-    })
-
     setError(error)
     if (!error) {
       setEmail('')
       setPassword('')
-      alert('Register success! confirm your email to activate your account!')
+      Swal.fire({
+        icon: 'success',
+        title: 'Register Success',
+        text: 'Confirmation has been sent to your email!'
+      })
 
       navigate('/auth/login')
     }
-    alert(error.message)
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: error
+    })
   }
   return (
     <>
