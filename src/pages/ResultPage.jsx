@@ -17,6 +17,7 @@ export default function ResultPage ({ id }) {
   const [_id, setId] = useAtom(currentId)
   const [quote, setQuote] = useAtom(userQuote)
   const navigate = useNavigate()
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640)
 
   const clear = () => {
     setBudget(0)
@@ -157,59 +158,47 @@ export default function ResultPage ({ id }) {
     }
     fetchResult()
   }, [])
+
+  useEffect(() => {
+    function handleResize () {
+      setIsMobile(window.innerWidth < 640)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <>
-      <div className="bg-krem h-screen bg-RP">
-        <h1 className="pt-20 pb-10 text-6xl font-bold text-biru drop-shadow-lg my-1 text-center">
-          Saran Penggunaan Budget
-        </h1>
-        <div className="flex justify-center">
-          <input className="px-3 py-3 text-lg font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue" value={'Rp. ' + budget} disabled/>
-        </div>
-        <div className="py-6 flex flex-col gap-6 justify-center bg-krem items-center">
-        <div className="flex items-center me-4 w-1/2 gap-4">
-          <div className='bg-biru rounded-full me-2 px-4 text-center outline outline-offset-2 outline-biru'>
-            <label className="block mb-2 text-3xl font-medium text-white">1</label>
-          </div>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Kebutuhan Utama</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {utama}</h1>
-        </div>
+      <div className={`bg-krem ${isMobile ? 'h-auto min-h-screen' : 'h-screen'} bg-RP`}>
+      <h1 className="pt-20 pb-10 text-6xl font-bold text-biru drop-shadow-lg my-1 text-center">
+        Saran Penggunaan Budget
+      </h1>
+      <div className="flex justify-center">
+        <input className="px-3 py-3 text-sm font-bold rounded-lg border-2 focus:outline focus:outline-2 focus:outline-offset-2 bg-[#ffffff] text-[#444444] focus:outline-[#aaaaaa] border-borderBlue" value={`Rp. ${budget}`} disabled />
       </div>
-
-      <div className="py-6 flex flex-col gap-6 justify-center bg-krem items-center">
-        <div className="flex items-center me-4 w-1/2 gap-4">
-          <div className='bg-biru rounded-full me-2 px-4 text-center outline outline-offset-2 outline-biru'>
-            <label className="block mb-2 text-3xl font-medium text-white">2</label>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {[utama, invest, darurat, saran].map((value, index) => (
+          <div key={index} className={`py-6 ${isMobile ? 'flex-col' : 'flex'} items-center justify-center gap-4`}>
+            <div className={`rounded-full px-4 text-center outline outline-offset-2 outline-biru bg-biru ${isMobile ? 'mb-2' : 'me-2'}`}>
+              <label className="text-3xl font-medium text-white">{index + 1}</label>
+            </div>
+            <h1 className={`px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue ${isMobile ? 'w-full' : 'w-3/4'}`}>
+              {['Kebutuhan Utama', 'Investasi', 'Dana Darurat', 'Dana Target Pembelian Kamu!'][index]}
+            </h1>
+            <h1 className={`px-3 py-3 text-sm font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue ${isMobile ? 'w-full' : 'w-1/4'}`}>
+              Rp. {value}
+            </h1>
           </div>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Investasi</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {invest}</h1>
-        </div>
-      </div>
-
-      <div className="py-6 flex flex-col gap-6 justify-center bg-krem items-center">
-        <div className="flex items-center me-4 w-1/2 gap-4">
-          <div className='bg-biru rounded-full me-2 px-4 text-center outline outline-offset-2 outline-biru'>
-            <label className="block mb-2 text-3xl font-medium text-white">3</label>
-          </div>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Dana Darurat</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {darurat}</h1>
-        </div>
-      </div>
-
-      <div className="py-6 flex flex-col gap-6 justify-center bg-krem items-center">
-        <div className="flex items-center me-4 w-1/2 gap-4">
-          <div className='bg-biru rounded-full me-2 px-4 text-center outline outline-offset-2 outline-biru'>
-            <label className="block mb-2 text-3xl font-medium text-white">4</label>
-          </div>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-3/4'>Dana Target Pembelian Kamu!</h1>
-          <h1 className='px-3 py-3 text-lg font-bold rounded-lg border-2 bg-[#ffffff] text-[#444444] border-borderBlue w-1/4'>Rp. {saran}</h1>
-        </div>
+        ))}
       </div>
       <div className="flex justify-center gap-5">
         <Link to={'/budgets'} className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#EE946B]">Back</Link>
-        <button className="my-6 block font-bold text-white rounded-lg px-6 py-3 bg-[#515F96]" onClick={onClickHandler}>See your result!</button>
+        <button className="my-6 block font-bold text-biru rounded-lg px-6 py-3 bg-biru text-white text-sm md:text-base md:px-6 md:py-3" onClick={onClickHandler}>
+          See your result!
+        </button>
       </div>
-      </div>
+    </div>
     </>
   )
 }
