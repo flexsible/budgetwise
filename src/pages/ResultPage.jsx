@@ -35,7 +35,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 25 / 100)
       setDarurat(budget * 10 / 100)
       setSaran(budget * 10 / 100)
-      setQuote("Orang ini punya gaya yang penuh semangat dan berani dalam ngatur keuangan. Dia selalu memastikan ${utama} dari gajinya cukup buat kebutuhan sehari-hari, tapi nggak ragu ngurangin buat peluang yang lebih besar. ${invest} dia pake buat investasi yang punya potensi tinggi, meskipun risikonya juga besar. Buat dia, masa depan cerah bisa dicapai dengan langkah-langkah berani. Meski begitu, dia tetap nyisihin ${darurat} buat dana darurat, biar tetap aman kalau ada kejadian tak terduga. ${saran} dia manfaatin buat mengejar barang-barang atau pengalaman yang bisa ningkatin hidupnya sekarang. Dengan strategi ini, dia yakin bisa meraih lebih cepat dari yang lain.")
+      setQuote(`"Orang ini punya gaya yang penuh semangat dan berani dalam ngatur keuangan. Dia selalu memastikan ${utama} dari gajinya cukup buat kebutuhan sehari-hari, tapi nggak ragu ngurangin buat peluang yang lebih besar. ${invest} dia pake buat investasi yang punya potensi tinggi, meskipun risikonya juga besar. Buat dia, masa depan cerah bisa dicapai dengan langkah-langkah berani. Meski begitu, dia tetap nyisihin ${darurat} buat dana darurat, biar tetap aman kalau ada kejadian tak terduga. ${saran} dia manfaatin buat mengejar barang-barang atau pengalaman yang bisa ningkatin hidupnya sekarang. Dengan strategi ini, dia yakin bisa meraih lebih cepat dari yang lain."`)
     }
 
     if (type === 'konservatif') {
@@ -43,7 +43,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 20 / 100)
       setDarurat(budget * 10 / 100)
       setSaran(budget * 10 / 100)
-      setQuote("Orang ini tipe yang santai dan sabar dalam ngatur keuangan. Dia pastikan ${utama} dari gajinya aman buat kebutuhan sehari-hari. Terus, ${invest} disimpen buat investasi biar masa depan lebih terjamin. Nggak lupa juga, ${darurat} buat dana darurat, jadi dia nggak pernah panik kalau ada kejadian tak terduga. Terakhir, ${saran} dia alokasiin buat barang impian yang pengen dibeli tahun depan. Pelan tapi pasti, dia jalanin semua dengan tenang.")
+      setQuote(`"Orang ini tipe yang santai dan sabar dalam ngatur keuangan. Dia pastikan ${utama} dari gajinya aman buat kebutuhan sehari-hari. Terus, ${invest} disimpen buat investasi biar masa depan lebih terjamin. Nggak lupa juga, ${darurat} buat dana darurat, jadi dia nggak pernah panik kalau ada kejadian tak terduga. Terakhir, ${saran} dia alokasiin buat barang impian yang pengen dibeli tahun depan. Pelan tapi pasti, dia jalanin semua dengan tenang."`)
     }
   }
 
@@ -84,7 +84,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 35 / 100)
       setDarurat(budget * 25 / 100)
       setSaran(budget * 15 / 100)
-      setQuote("Siap untuk tantangan? Di BudgetWise, kita bisa kelola duit dengan berani dan penuh semangat. Bayangin aja, ${utama} buat kebutuhan sehari-hari yang nggak bisa ditunda, ${invest} buat investasi di peluang besar dengan potensi keuntungan yang menggoda, ${darurat} untuk dana darurat biar siap ngadepin kejadian tak terduga, dan ${saran} buat ngincer barang atau pengalaman keren yang kita pengenin dalam waktu dekat. Jadi, kita bisa ambil langkah maju dengan percaya diri dan semangat tinggi. Ayo, mulai kelola keuangan dengan cara yang dinamis di BudgetWise!")
+      setQuote(`"Siap untuk tantangan? Di BudgetWise, kita bisa kelola duit dengan berani dan penuh semangat. Bayangin aja, ${utama} buat kebutuhan sehari-hari yang nggak bisa ditunda, ${invest} buat investasi di peluang besar dengan potensi keuntungan yang menggoda, ${darurat} untuk dana darurat biar siap ngadepin kejadian tak terduga, dan ${saran} buat ngincer barang atau pengalaman keren yang kita pengenin dalam waktu dekat. Jadi, kita bisa ambil langkah maju dengan percaya diri dan semangat tinggi. Ayo, mulai kelola keuangan dengan cara yang dinamis di BudgetWise!"`)
     }
 
     if (type === 'konservatif') {
@@ -92,7 +92,7 @@ export default function ResultPage ({ id }) {
       setInvest(budget * 30 / 100)
       setDarurat(budget * 25 / 100)
       setSaran(budget * 15 / 100)
-      setQuote("Tenang aja, sabar-sabar aja. Di BudgetWise, kita bisa atur duit dengan santai. Coba bayangin, ${utama} buat keperluan utama yang penting banget, ${invest} buat investasi buat masa depan, ${darurat} buat jaga-jaga kalo ada apa-apa, dan ${saran} buat beli barang yang kita pengenin dalam setahun. Jadi, kita bisa nikmatin hidup tanpa perlu khawatirin soal uang. Yuk, kita mulai atur duit bersama-sama di BudgetWise!")
+      setQuote(`"Tenang aja, sabar-sabar aja. Di BudgetWise, kita bisa atur duit dengan santai. Coba bayangin, ${utama} buat keperluan utama yang penting banget, ${invest} buat investasi buat masa depan, ${darurat} buat jaga-jaga kalo ada apa-apa, dan ${saran} buat beli barang yang kita pengenin dalam setahun. Jadi, kita bisa nikmatin hidup tanpa perlu khawatirin soal uang. Yuk, kita mulai atur duit bersama-sama di BudgetWise!"`)
     }
   }
 
