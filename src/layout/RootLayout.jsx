@@ -49,6 +49,7 @@ function RootLayout () {
                 ? (
                   <div className="flex-col gap-2 items-center flex">
                     <Link to="/budgets" className="text-center block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">App</Link>
+                    {/* <Link to="/history" className="text-center block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">Your History</Link> */}
                     <button
                     className='text-center block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]'
                     onClick={handleSubmit}
@@ -72,6 +73,7 @@ function RootLayout () {
                 ? (
                   <div className="flex">
                     <Link to="/budgets" className="mx-6 text-white block font-bold border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">App</Link>
+                    {/* <Link to="/history" className="text-center block font-bold text-white border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]">Your History</Link> */}
                     <button
                     className='mx-6 text-white block font-bold border rounded-lg px-4 py-1 border-[#EE946B] hover:bg-[#EE946B]'
                     onClick={handleSubmit}

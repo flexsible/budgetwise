@@ -28,11 +28,6 @@ export default function RegisterInput () {
 
       navigate('/auth/login')
     }
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: error
-    })
   }
   return (
     <>
