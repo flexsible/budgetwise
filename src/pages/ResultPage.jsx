@@ -111,8 +111,23 @@ export default function ResultPage ({ id }) {
         }
       ])
       .select()
+  }
 
-    console.log('insert', data)
+  const feedbackFunction = () => {
+    Swal.fire({
+      title: 'Give us a feedback',
+      showDenyButton: false,
+      showCancelButton: true,
+      confirmButtonText: 'Give a Feedback',
+      denyButtonText: 'Don\'t save'
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.open('https://docs.google.com/forms/d/e/1FAIpQLScM11unzVBu1BqqMI68d-7VICpkzAJMnkP092ZZ5WNFKzsOgA/viewform', result.isConfirmed)
+      } else if (result.isDenied) {
+        Swal.fire('Thank you for coming')
+      }
+    })
   }
 
   const onClickHandler = () => {
@@ -132,6 +147,7 @@ export default function ResultPage ({ id }) {
             navigate('/')
           }, 3000)
           clear()
+          feedbackFunction()
         } else if (result.isDenied) {
           Swal.fire('Changes are not saved', '', 'info')
         }
